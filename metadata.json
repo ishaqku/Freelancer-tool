@@ -1,0 +1,6 @@
+{
+  "name": "RateCalc - Freelance Rate Calculator",
+  "description": "Calculate fair freelance rates based on location, skills, and experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
