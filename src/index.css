@@ -15,19 +15,3 @@
     to { opacity: 1; transform: translateY(0); }
   }
 }
-
-html {
-  transition: filter 0.3s ease;
-}
-
-html.dark {
-  filter: invert(1) hue-rotate(180deg);
-  background-color: #f8fafc; /* Helps with page background edge cases */
-}
-
-/* Re-invert media/images so they look normal */
-html.dark img,
-html.dark video,
-html.dark canvas {
-  filter: invert(1) hue-rotate(180deg);
-}

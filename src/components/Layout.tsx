@@ -1,31 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { Calculator, FileText, Calendar, Clock, Target, Shield, LayoutDashboard, BarChart, Moon, Sun, Menu, X } from 'lucide-react';
+import { Calculator, FileText, Calendar, Clock, Target, Shield, LayoutDashboard, BarChart, Menu, X } from 'lucide-react';
 
 export const Layout = () => {
   const location = useLocation();
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-      setIsDarkMode(true);
-    }
-  };
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -80,17 +59,9 @@ export const Layout = () => {
                 })}
               </nav>
 
-              {/* Dark Mode and Mobile Menu Toggles */}
-              <button 
-                onClick={toggleDarkMode} 
-                className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors flex-shrink-0 mr-2"
-                aria-label="Toggle Dark Mode"
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors"
+                className="lg:hidden p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors ml-2"
                 aria-label="Toggle Menu"
               >
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
