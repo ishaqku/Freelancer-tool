@@ -38,7 +38,7 @@ export const Layout = () => {
             {/* Navigation Controls */}
             <div className="flex items-center flex-1 justify-end">
               {/* Desktop Navigation Links */}
-              <nav className="hidden lg:flex space-x-4 overflow-x-auto items-center mr-4">
+              <nav className="hidden lg:flex space-x-2 overflow-x-auto items-center mr-4">
                 {navItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = location.pathname.startsWith(item.path);
@@ -46,13 +46,13 @@ export const Layout = () => {
                     <Link
                       key={item.name}
                       to={item.path}
-                      className={`inline-flex items-center px-2 py-1 border-b-2 text-sm font-medium whitespace-nowrap ${
+                      className={`inline-flex items-center px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap transition-colors ${
                         isActive
-                          ? 'border-blue-500 text-slate-900'
-                          : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700'
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                       }`}
                     >
-                      <Icon className="w-4 h-4 mr-1.5" />
+                      <Icon className="w-4 h-4 mr-2" />
                       {item.name}
                     </Link>
                   );

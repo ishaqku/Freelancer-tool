@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Select } from './ui/select';
 import { Button } from './ui/button';
-import { Checkbox } from './ui/checkbox';
 import { negotiationScripts } from '../lib/negotiationScripts';
 import { experienceLevels } from '../data/rateData';
 import { MessageSquare, Copy, CheckCircle2 } from 'lucide-react';
@@ -22,7 +21,7 @@ export const RateJustification: React.FC<RateJustificationProps> = ({
   const [copied, setCopied] = useState(false);
   
   const scriptTemplate = negotiationScripts.find(s => s.id === selectedScriptId);
-  const experienceYears = experienceLevels.find(e => e.id === experienceId)?.yearsRange || 'several';
+  const experienceYears = experienceLevels.find(e => e.id === experienceId)?.label || 'several years';
   
   const generateScriptText = () => {
     if (!scriptTemplate) return "";

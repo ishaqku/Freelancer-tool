@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
 import { Select } from './ui/select';
 import { Button } from './ui/button';
-import { Checkbox } from './ui/checkbox';
 import { projectTemplates } from '../lib/projectTemplates';
 import { Calculator, Check, ArrowRight, Copy } from 'lucide-react';
 

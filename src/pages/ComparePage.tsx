@@ -85,7 +85,7 @@ export const ComparePage = () => {
                  <label className="text-sm font-medium text-slate-700">Experience Level</label>
                  <Select value={expId} onChange={(e) => setExpId(e.target.value)}>
                     {experienceLevels.map(e => (
-                      <option key={e.id} value={e.id}>{e.label} ({e.yearsRange} yrs)</option>
+                      <option key={e.id} value={e.id}>{e.title} ({e.label})</option>
                     ))}
                  </Select>
               </div>
