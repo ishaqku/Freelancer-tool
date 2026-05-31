@@ -56,39 +56,8 @@ export const Layout = () => {
               </Link>
             </div>
             
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center flex-1 justify-end">
-              <nav className="flex space-x-4 items-center mr-4">
-                {navItems.map((item) => {
-                  const Icon = item.icon;
-                  const isActive = location.pathname.startsWith(item.path);
-                  return (
-                    <Link
-                      key={item.name}
-                      to={item.path}
-                      className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium whitespace-nowrap ${
-                        isActive
-                          ? 'border-blue-500 text-slate-900'
-                          : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-700'
-                      }`}
-                    >
-                      <Icon className="w-4 h-4 mr-1.5" />
-                      {item.name}
-                    </Link>
-                  );
-                })}
-              </nav>
-              <button 
-                onClick={toggleDarkMode} 
-                className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors flex-shrink-0 ml-2"
-                aria-label="Toggle Dark Mode"
-              >
-                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
-            </div>
-
-            {/* Mobile Navigation Controls */}
-            <div className="flex md:hidden items-center">
+            {/* Navigation Controls */}
+            <div className="flex items-center flex-1 justify-end">
               <button 
                 onClick={toggleDarkMode} 
                 className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-colors flex-shrink-0 mr-2"
@@ -107,9 +76,9 @@ export const Layout = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        {/* Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-slate-200 bg-white">
+          <div className="border-t border-slate-200 bg-white">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navItems.map((item) => {
                 const Icon = item.icon;
